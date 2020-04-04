@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xP0-TI-h6M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j4W-Wv-p3B">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoey View Controller-->
+        <!--ToDoEY-->
         <scene sceneID="jT4-LY-q63">
             <objects>
                 <tableViewController id="xP0-TI-h6M" customClass="TodoeyViewController" customModule="ToDoEy" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,10 +29,30 @@
                             <outlet property="delegate" destination="xP0-TI-h6M" id="ryH-7U-avq"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="ToDoEY" id="yen-Z1-QiZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecg-rJ-mz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413" y="136"/>
+            <point key="canvasLocation" x="1321.7391304347827" y="135.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ypo-jM-xne">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j4W-Wv-p3B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KgR-sr-sPI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.66204871710000002" green="0.7715754534" blue="0.27669513839999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xP0-TI-h6M" kind="relationship" relationship="rootViewController" id="Ztt-m6-MdN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V2l-o1-aqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="411.59420289855075" y="135.9375"/>
         </scene>
     </scenes>
 </document>
