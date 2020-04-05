@@ -15,6 +15,7 @@ class TodoeyViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     //MARK: TableView DataSoource
@@ -31,6 +32,37 @@ class TodoeyViewController: UITableViewController {
         cell.textLabel?.text = arrayData[indexPath.row]
         return cell
     }
-
+    
+    //MARK: TableView Delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let check = UITableViewCell.AccessoryType.checkmark
+        let none = UITableViewCell.AccessoryType.none
+        if tableView.cellForRow(at: indexPath)?.accessoryType==check {
+            tableView.cellForRow(at: indexPath)?.accessoryType=none
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType=check
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //MARK: IBAction
+    
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
+        
+        var alerTextField = UITextField()
+        let alert = UIAlertController(title: "Add a new Item", message: "OH", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Item", style: .default) { (UIAlertAction) in
+            print(alerTextField.text)
+        }
+        
+        alert.addTextField { (UITextField) in
+            alerTextField = UITextField
+        }
+        alert.addAction(action)
+        present(alert,animated: true)
+        
+    }
+    
 }
 
