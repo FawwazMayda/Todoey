@@ -9,7 +9,7 @@
 import UIKit
 
 class TodoeyViewController: UITableViewController {
-    let arrayData = ["Abang","Bola","Kotak"]
+    var arrayData = ["Abang","Bola","Kotak"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,8 @@ class TodoeyViewController: UITableViewController {
         let alert = UIAlertController(title: "Add a new Item", message: "OH", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (UIAlertAction) in
             print(alerTextField.text)
+            self.arrayData.append(alerTextField.text!)
+            self.tableView.reloadData()
         }
         
         alert.addTextField { (UITextField) in
